@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<link rel="stylesheet" type="text/css" href="../tip/jquery-tip-min.css">
+	<style type="text/css">
+		html, body {
+			background-color: #444;
+			height: 3000px;
+		}
+	</style>
+</head>
+<body>
+	<button id="hovertip">悬停提示</button>
+	<button class="btn btn-open btn-1">点我</button>
+	<button class="btn btn-open btn-2">点我</button>
+	<button class="btn btn-open btn-3">点我</button>
+	<button class="btn btn-open btn-4">点我</button>
+	<button class="btn btn-open btn-5">点我</button>
+	<button class="btn btn-hover btn-6">别点我</button>
+	<button class="btn btn-hover btn-7">别点我</button>
+	<button class="btn btn-hover btn-8">别点我</button>
+	<button class="btn btn-hover btn-9">别点我</button>
+	<button class="btn btn-hover btn-10">别点我</button>
+	<button id="clicktip" style="position: fixed;left: 200px;top: 200px;">点击提示</button>
+	<script type="text/javascript" src="http://cdn.staticfile.org/jquery/2.1.1-rc2/jquery.min.js"></script>
+	<script type="text/javascript" src="../align/jquery-align.js"></script>
+	<script type="text/javascript" src="../tip/jquery-tip.js"></script>
+	<script type="text/javascript">
+		$(function(){
+			$('#hovertip').tip({
+				content: '这是提示',
+				align: {
+					base: $('#hovertip'),
+					points: ['bc', 'tc'],
+					fixed: false,
+					offset: [0, 10]
+				},
+				trigger: 'hover',
+				arrow: {
+					type: 'top',
+					size: 10,
+					color: '#fff',
+					offset: -20
+				}
+			});
+			$('#clicktip').tip({
+				content: '这是提示',
+				align: {
+					base: $('#clicktip'),
+					points: ['bc', 'tc'],
+					fixed: true,
+					offset: [0, 10]
+				},
+				trigger: 'click',
+				arrow: {
+					type: 'top',
+					size: 10,
+					color: '#fff',
+					offset: 5
+				},
+				duration: 2000
+			});
+			$('.btn-hover').tip({
+				content: '这是提示',
+				align: {
+					base: 'self',
+					points: ['bc', 'tc'],
+					fixed: false,
+					offset: [0, 10]
+				},
+				trigger: 'hover',
+				arrow: {
+					type: 'top',
+					size: 10,
+					color: '#fff',
+					offset: -20
+				}
+			});
+			$('.btn-open').tip({
+				content: '这是提示',
+				align: {
+					base: 'self',
+					points: ['bc', 'tc'],
+					fixed: true,
+					offset: [0, 10]
+				},
+				trigger: 'click',
+				arrow: {
+					type: 'top',
+					size: 10,
+					color: '#fff',
+					offset: 5
+				}
+			});
+		});
+		
+	</script>
+</body>
+</html>
